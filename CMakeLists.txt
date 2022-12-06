@@ -7,10 +7,13 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(turtlebot3_gazebo REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -24,4 +27,19 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+
+include_directories(include/obstacle-avoidance-turtlebot3)
+add_executable(bot_node src/obsAvoid.cpp app/main.cpp)
+ament_target_dependencies(bot_node rclcpp std_msgs geometry_msgs tf2 tf2_ros sensor_msgs)
+
+install(TARGETS
+bot_node
+DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+ament_export_dependencies(rosidl_default_runtime)
 ament_package()

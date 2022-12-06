@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find-pkg-share turtlebot3_gazebo)/launch/turtlebot3_world.launch.py">
+  </include>
+  <node pkg="obstacle-avoidance-turtlebot3" exec="bot_node" name="bot_node"/>
+</launch>
