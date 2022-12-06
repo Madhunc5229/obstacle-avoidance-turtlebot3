@@ -45,6 +45,11 @@ source install/setup.bash
 ```
 ros2 launch obstacle-avoidance-turtlebot3 obsAvoid.launch record:=true
 ```
+## Rosbag 
+- To inspect the rosbag file, run the following
+```
+ros2 bag info src/obstacle-avoidance-turtlebot3/results/ros_bag_file.bag
+```
 - To play the rosbag file (Please make sure Gazebo is not running before playing the bag file)
 ```
 ros2 bag play src/obstacle-avoidance-turtlebot3/results/ros_bag_file.bag
