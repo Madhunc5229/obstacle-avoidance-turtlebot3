@@ -4,5 +4,3 @@
   <node pkg="obstacle-avoidance-turtlebot3" exec="bot_node" name="bot_node"/>
   <executable cmd="ros2 bag record -o src/obstacle-avoidance-turtlebot3/results/ros_bag_file.bag -a -x '(.*)/camera(.*)' -d 30" output="screen" if="$(var record)"/>
 </launch>
-
-
