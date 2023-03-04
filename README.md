@@ -11,6 +11,12 @@
 - rosdep
 - turtlebot3
 
+## Install ROS2 Humble 
+- If you are using ubuntu 22.02, you can install ROS2 Humble with single command. If you are using ubuntu 20.04, then you will have install it by building from source.
+- Please follow the steps mentioned in the following link to install ROS2 Humble.
+
+https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
+
 ## Install turtlebot package 
 - If you have already installed turtlebot3 for ros2, please skip this step
 - The following is debian package install for turtlebot3
